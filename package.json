@@ -1,0 +1,46 @@
+{
+  "name": "just-shop",
+  "version": "1.0.0",
+  "description": "A shopping app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "server": "nodemon --exec babel-node src/index.js",
+    "build": "babel src --out-dir dist",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run defaultAdmin"
+  },
+  "author": "Samador",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.15",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "node-geocoder": "^3.27.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.18.1",
+    "pg-hstore": "^2.3.3",
+    "regenerator-runtime": "^0.13.3",
+    "sequelize": "^5.21.4",
+    "swagger-ui": "^3.25.0",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "nodemon": "^2.0.2"
+  }
+}
