@@ -12,7 +12,7 @@ router.route('/market/').get(marketController.fetchAllMarket).post(passport.auth
   session: false
 }), uploads.array('images', 3), marketController.addMarket)
 
-router.delete('/market/:id', passport.authenticate('jwt', {
+router.route('/market/:id').get(marketController.fetchSingleMarket).delete(passport.authenticate('jwt', {
   session: false
 }), marketController.deleteMarket)
 export default router

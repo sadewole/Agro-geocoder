@@ -64,7 +64,8 @@ const marketController = {
         if (newMarket) {
           return res.status(201).json({
             success: true,
-            data: newMarket
+            data: newMarket,
+            message: 'Created successfully'
           })
         }
         return res.status(403).json({
@@ -90,6 +91,29 @@ const marketController = {
           message: 'Server error'
         })
       }
+    }
+  },
+
+  async fetchSingleMarket (req, res) {
+    try {
+      const data = await Market.findById(req.params.id)
+      if (data) {
+        return res.status(200).json({
+          success: true,
+          data,
+          message: 'Fetched successfully'
+        })
+      }
+
+      return res.status(404).json({
+        error: true,
+        message: 'Search not found'
+      })
+    } catch (err) {
+      res.status(500).json({
+        error: true,
+        message: 'Server error'
+      })
     }
   },
 
