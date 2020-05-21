@@ -20,9 +20,8 @@ app.use(
   })
 )
 
-
 app.use('/api/v1', authRoute, userRoute, marketRoute)
 
 const PORT = process.env.PORT || 5500
 
-app.listen(PORT, ()=>console.log(`Server running on ${PORT}`))
+app.listen(PORT, () => console.log(`Server running on PORT: ${PORT}`))
