@@ -10,6 +10,9 @@ const router = Router()
 
 router.route('/market/').get(marketController.fetchAllMarket).post(passport.authenticate('jwt', {
   session: false
-}), uploads.array('images', 5), marketController.addMarket)
+}), uploads.array('images', 3), marketController.addMarket)
 
+router.delete('/market/:id', passport.authenticate('jwt', {
+  session: false
+}), marketController.deleteMarket)
 export default router

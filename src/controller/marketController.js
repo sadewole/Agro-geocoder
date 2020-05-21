@@ -10,7 +10,7 @@ const marketController = {
    *
    * @param {respond json} res
    */
-  async fetchAllMarket(req, res) {
+  async fetchAllMarket (req, res) {
     try {
       const market = await Market.find({})
 
@@ -31,7 +31,7 @@ const marketController = {
    * @param {name, address, description, images} req
    * @param {respond json} res
    */
-  async addMarket(req, res) {
+  async addMarket (req, res) {
     try {
       const {
         name,
@@ -90,6 +90,23 @@ const marketController = {
           message: 'Server error'
         })
       }
+    }
+  },
+
+  async deleteMarket (req, res) {
+    try {
+      await Market.findOneAndDelete({
+        _id: req.params.id
+      })
+      res.status(200).json({
+        success: true,
+        message: 'Deleted successfully'
+      })
+    } catch (error) {
+      res.status(500).json({
+        error: true,
+        message: 'Server error'
+      })
     }
   }
 }
