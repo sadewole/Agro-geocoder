@@ -1,8 +1,8 @@
-# Zicli Shop
+# ***
 
-Web Application for Mock shop
+Web Application for Mock Market Location
 
-This file consist of API hosted on Heroku.Its correspinding frontend file can be found at [Front-End](https://github.com/sadewole/Zicli-Synergy-Mock-Shop-Front-End-)
+This file consist of API hosted on Heroku.Its correspinding frontend file can be found at [Front-End](https://github.com/sadewole/Agro-coder-FE)
 
 ## Prerequisites
 
@@ -14,13 +14,10 @@ This file consist of API hosted on Heroku.Its correspinding frontend file can be
 
 ## Installing
 
-Clone this project using `git clone https://github.com/sadewole/zicli-synergy-mock-shop` on your bash or cmd
-
 ```shell
-mkdir zicli-shop
-cd zicli-shop
-git clone https://github.com/sadewole/zicli-synergy-mock-shop
-cd "zicli-synergy-mock-shop"
+on your bash or cmd
+git clone https://github.com/sadewole/Agro-coder-FE.git
+cd "Agro-coder-FE
 npm Install
 git checkout master
 npm start
@@ -34,23 +31,18 @@ make your environment variable `.env file`
 Fill in this data for postgresql and Json web token to work
 
 ```
-PORT=3000
-PGHOST=localhost
-PGPASSWORD=
-PGDATABASE=mockshop
-PGUSER=
-PGPORT=7432
-JWT_KEY=
+mongoURI
+JWT_SECRET
+
+CLOUDINARY_NAME
+CLOUDINARY_API_KEY
+CLOUDINARY_SECRET_KEY
+
+GEOCODER_PROVIDER
+GEOCODER_APIKEY
 ```
 
 ## Features
-
-1. user can create an account and log in
-2. A user should be able to order for food
-3. The admin should be able to add, edit, or delete product items
-4. The admin should be able to see a list of products
-5. User can see product in his/her cart
-6. User can delete a product from his/her cart
 
 ## API Routes
 
@@ -61,17 +53,10 @@ JWT_KEY=
 | POST      | /api/v1/auth/signup    | Register a user                               |
 | POST      | /api/v1/auth/signin    | Login a user                                  |
 | GET       | /api/v1/auth/secret    | Get a specific user by user token             |
-| GET       | /api/v1/product        | Get all available product on the webpage      |
-| GET       | /api/v1/product/:id    | Get one product by ID                         |
-| POST      | /api/v1/product        | Post new product to productlist               |
-| PUT       | /api/v1/product/:id    | Update product by id                          |
-| DELETE    | /api/v1/product/:id    | Delete one product from the productlist by ID |
-| GET       | /api/v1/order          | Get all ordered products                      |
-| GET       | /api/v1/order/:id      | Get one order by ID                           |
-| GET       | /api/v1/order/user/:id | Get all order of a specific user by ID        |
-| POST      | /api/v1/order          | Post new order by user                        |
-| PUT       | /api/v1/order/:id      | Update order status                           |
-| DELETE    | /api/v1/order/:id      | Delete an order                           |
+| GET       | /api/v1/market        | Get all available market on the webpage      |
+| GET       | /api/v1/market/:id    | Get one market by ID                         |
+| POST      | /api/v1/market        | Post new market to marketlist               |
+| DELETE    | /api/v1/market/:id    | Delete one market from the marketlist by ID |
 | GET       | /api/v1/user           | Get all registered user                       |
 | GET       | /api/v1/user/:id       | Get user by ID                                |
 | DELETE    | /api/v1/user/:id       | Delete user by ID                             |
@@ -82,9 +67,7 @@ If you'd like to Contribute, please fork the repository and create a new branch,
 
 ## Links
 
-1. [API on Heroku](https://zicli-synergy.herokuapp.com/api/v1)
-2. [Frontend on Netlify](https://zicli-mock-shop.netlify.com/)
-3. [API on Swagger](https://app.swaggerhub.com/apis/PressGurd/Mock-shop/1.0#trial)
+1. [API on Heroku](https://agro-mall-market.herokuapp.com/api/v1)
 
 ## Author
 
