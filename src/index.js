@@ -1,3 +1,4 @@
+import path from 'path'
 import express from 'express'
 import logger from 'morgan'
 import 'regenerator-runtime/runtime'
@@ -19,8 +20,18 @@ app.use(
     extended: false
   })
 )
-
 app.use('/api/v1', authRoute, userRoute, marketRoute)
+
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static(path.join(__dirname, '../build')));
+  app.get(/.*/, function (req, res) {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+  });
+}
+
 
 const PORT = process.env.PORT || 5500
 
