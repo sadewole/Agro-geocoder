@@ -1,0 +1,25 @@
+.admin {
+    width: 600px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sub-division {
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+@media (max-width: 600px) {
+    .admin {
+        width: 90%;
+    }
+}
